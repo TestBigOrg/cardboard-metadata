@@ -1,0 +1,39 @@
+{
+  "name": "cardboard-list",
+  "version": "0.0.0",
+  "description": "Adds feature listing support to cardboard",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "eslint index.js lib test/*.js",
+    "test": "tape test/*.test.js"
+  },
+  "keywords": [
+    "cardboard"
+  ],
+  "author": "Mapbox",
+  "license": "ISC",
+  "devDependencies": {
+    "dynamodb-test": "^0.3.0",
+    "eslint": "^3.11.1",
+    "geojson-fixtures": "^1.0.0",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.6.3"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "cardboard": "https://github.com/mapbox/cardboard/tarball/0a0263a8e56702d06bc51497e2b89adbc495c642",
+    "dyno": "1.2.1",
+    "eslint": "^3.11.1",
+    "tape": "^4.6.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mapbox/cardboard-list.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mapbox/cardboard-list/issues"
+  },
+  "homepage": "https://github.com/mapbox/cardboard-list#readme"
+}
