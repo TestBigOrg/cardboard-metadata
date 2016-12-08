@@ -1,7 +1,7 @@
 {
-  "name": "cardboard-list",
+  "name": "cardboard-metadta",
   "version": "0.0.0",
-  "description": "Adds feature listing support to cardboard",
+  "description": "Adds metadata support to cardboard",
   "main": "index.js",
   "scripts": {
     "pretest": "eslint index.js lib test/*.js",
@@ -30,10 +30,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mapbox/cardboard-list.git"
+    "url": "git+https://github.com/mapbox/cardboard-metadta.git"
   },
   "bugs": {
-    "url": "https://github.com/mapbox/cardboard-list/issues"
+    "url": "https://github.com/mapbox/cardboard-metadta/issues"
   },
-  "homepage": "https://github.com/mapbox/cardboard-list#readme"
+  "homepage": "https://github.com/mapbox/cardboard-metadta#readme"
 }
