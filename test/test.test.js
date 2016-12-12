@@ -39,7 +39,7 @@ metadataTable.test('[stream handler] check adding on an empty db works', functio
         cardboardMetadata.get('default', function(err, metadata) {
             if (err) return assert.end(err);
             assert.equal(metadata.count, states.length, 'has right count');
-            assert.equal(metadata.edits, states.length, 'has right num edits');
+            assert.equal(metadata.editcount, states.length, 'has right num editcount');
             assert.equal(metadata.size, states.reduce(function(m, s) { return m + s.size; }, 0), 'has right size');
             assert.equal(metadata.west, bounds[0], 'has right west');
             assert.equal(metadata.south, bounds[1], 'has right south');
@@ -51,7 +51,7 @@ metadataTable.test('[stream handler] check adding on an empty db works', functio
     });
 });
 
-var seed = {dataset: 'default', key: 'metadata', count: countries.length+10, size: 10000000, west:0, east:0, south:0, north:0, edits:0 };
+var seed = {dataset: 'default', key: 'metadata', count: countries.length+10, size: 10000000, west:0, east:0, south:0, north:0, editcount:0 };
 metadataTable.test('[stream handler] check deleteing works', [seed], function(assert) {
     var cardboardMetadata = CardboardMetadata(metadataConfig);
     var events = toEvent('REMOVE', countries);
@@ -61,7 +61,7 @@ metadataTable.test('[stream handler] check deleteing works', [seed], function(as
         cardboardMetadata.get('default', function(err, metadata) {
             if (err) return assert.end(err);
             assert.equal(metadata.count, 10, 'has right count');
-            assert.equal(metadata.edits, countries.length, 'has right num edits');
+            assert.equal(metadata.editcount, countries.length, 'has right num editcount');
             assert.equal(metadata.size, seed.size - countries.reduce(function(m, s) { return m + s.size; }, 0), 'has right size');
             assert.equal(metadata.west, 0, 'no change on west');
             assert.equal(metadata.south, 0, 'no change on south');
