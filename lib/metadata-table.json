@@ -1,12 +1,10 @@
 {
-    "TableName": "list",
+    "TableName": "metadata",
     "AttributeDefinitions": [
-        {"AttributeName": "dataset", "AttributeType": "S"},
         {"AttributeName": "key", "AttributeType": "S"}
     ],
     "KeySchema": [
-        {"AttributeName": "dataset", "KeyType": "HASH"},
-        {"AttributeName": "key", "KeyType": "RANGE"}
+        {"AttributeName": "key", "KeyType": "HASH"}
     ],
     "ProvisionedThroughput": {
         "ReadCapacityUnits": 5,

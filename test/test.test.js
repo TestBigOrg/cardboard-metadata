@@ -51,7 +51,8 @@ metadataTable.test('[stream handler] check adding on an empty db works', functio
     });
 });
 
-var seed = {dataset: 'default', key: 'metadata', count: countries.length+10, size: 10000000, west:0, east:0, south:0, north:0, editcount:0 };
+var seed = {key: 'metadata!default', count: countries.length+10, size: 10000000, west:0, east:0, south:0, north:0, editcount:0 };
+
 metadataTable.test('[stream handler] check deleteing works', [seed], function(assert) {
     var cardboardMetadata = CardboardMetadata(metadataConfig);
     var events = toEvent('REMOVE', countries);
