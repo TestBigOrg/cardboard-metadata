@@ -1,5 +1,5 @@
 {
-  "name": "cardboard-metadta",
+  "name": "cardboard-metadata",
   "version": "0.0.0",
   "description": "Adds metadata support to cardboard",
   "main": "index.js",
@@ -24,12 +24,10 @@
   },
   "dependencies": {
     "@turf/bbox": "^3.7.0",
-    "cardboard": "https://github.com/mapbox/cardboard/tarball/0a0263a8e56702d06bc51497e2b89adbc495c642",
+    "cardboard": "^3.0.0",
     "d3-queue": "^3.0.3",
-    "dyno": "1.2.1",
-    "eslint": "^3.11.1",
-    "sphericalmercator": "^1.0.5",
-    "tape": "^4.6.3"
+    "dyno": "1.4.0",
+    "sphericalmercator": "^1.0.5"
   },
   "repository": {
     "type": "git",
