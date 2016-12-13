@@ -2,7 +2,7 @@ var extent = require('@turf/bbox');
 var Dyno = require('dyno');
 var dynamodbTest = require('dynamodb-test');
 var tape = require('tape');
-var utils = require('cardboard/lib/utils')();
+var utils = require('cardboard/lib/utils');
 
 var metadataTableSpec = require('../lib/metadata-table.json');
 var metadataTable = dynamodbTest(tape, 'cardboard-metadata', metadataTableSpec);
@@ -51,7 +51,7 @@ metadataTable.test('[stream handler] check adding on an empty db works', functio
     });
 });
 
-var seed = {key: 'metadata!default', count: countries.length+10, size: 10000000, west:0, east:0, south:0, north:0, editcount:0 };
+var seed = {key: 'default', count: countries.length+10, size: 10000000, west:0, east:0, south:0, north:0, editcount:0 };
 
 metadataTable.test('[stream handler] check deleteing works', [seed], function(assert) {
     var cardboardMetadata = CardboardMetadata(metadataConfig);
@@ -98,12 +98,14 @@ metadataTable.test('[get] get an existing metadata doc', [seed], function(assert
 metadataTable.close();
 
 function toEvent(action, records) {
-    return records.map(function(mainRecord) {
-        var serialized = JSON.parse(Dyno.serialize(mainRecord));
-        var record = { eventName: action };
-        record.dynamodb = {};
-        record.dynamodb.OldImage = action !== 'INSERT' ? serialized : undefined;
-        record.dynamodb.NewImage = action !== 'REMOVE' ? serialized : undefined;
-        return record;
-    });
+    return {
+        records: records.map(function(mainRecord) {
+            var serialized = JSON.parse(Dyno.serialize(mainRecord));
+            var record = { eventName: action };
+            record.dynamodb = {};
+            record.dynamodb.OldImage = action !== 'INSERT' ? serialized : undefined;
+            record.dynamodb.NewImage = action !== 'REMOVE' ? serialized : undefined;
+            return record;
+        })
+    };
 }
