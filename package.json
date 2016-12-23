@@ -1,5 +1,5 @@
 {
-  "name": "cardboard-metadata",
+  "name": "@mapbox/cardboard-metadata",
   "version": "1.0.0",
   "description": "Adds metadata support to cardboard",
   "main": "index.js",
