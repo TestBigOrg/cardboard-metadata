@@ -2,7 +2,7 @@ var extent = require('@turf/bbox');
 var Dyno = require('dyno');
 var dynamodbTest = require('dynamodb-test');
 var tape = require('tape');
-var utils = require('cardboard/lib/utils');
+var utils = require('@mapbox/cardboard/lib/utils');
 
 var metadataTableSpec = require('../lib/metadata-table.json');
 var metadataTable = dynamodbTest(tape, 'cardboard-metadata', metadataTableSpec);

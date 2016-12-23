@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "@turf/bbox": "^3.7.0",
-    "cardboard": "^3.0.0",
+    "@mapbox/cardboard": "^3.0.0",
     "d3-queue": "^3.0.3",
     "dyno": "1.4.0",
     "sphericalmercator": "^1.0.5"
